@@ -1,0 +1,117 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.player-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    text-align: center;
+}
+
+.img-container {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 20px;
+}
+
+#albumArt {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: rotate 20s linear infinite;
+    animation-play-state: paused;
+}
+.player.playing #albumArt {
+    animation-play-state: running;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+h2#title {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0 0 5px;
+}
+
+h3#artist {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #555;
+    margin: 0 0 30px;
+}
+
+/* Progress Bar */
+.progress-container {
+    background: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    height: 10px;
+}
+
+.progress {
+    background-color: #84fab0;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.duration-wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85em;
+    color: #555;
+}
+
+/* Controls */
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.action-btn {
+    background-color: transparent;
+    border: 0;
+    color: #666;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.2s;
+}
+
+.action-btn:hover {
+    color: #333;
+}
+
+.action-btn.action-btn-big {
+    color: #444;
+    font-size: 40px;
+}
